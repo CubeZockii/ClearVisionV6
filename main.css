@@ -1,4 +1,5 @@
-/*! ClearVision v6.9.1 by ClearVision Team */@keyframes cv-channel-select{from{right:100%}to{right:0}}@keyframes cv-card-loading{0%{opacity:.66}50%{opacity:.33}100%{opacity:.66}}/*! ClearVision v6.9.1 by ClearVision Team */.info__2debe::after {
+/*! ClearVision v6.9.1 by ClearVision Team */
+.info__2debe::after {
   content: "ClearVision" " " "6.9.1";
   color: var(--text-muted);
   font-size: 12px;
