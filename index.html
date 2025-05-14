@@ -1,50 +1,106 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ClearVision V6 – Discord Theme</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
-      rel="stylesheet"
-    />
+
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
     <style>
       body {
         background: url('https://wallpapercave.com/wp/wp7444392.jpg') no-repeat center center fixed;
         background-size: cover;
+        font-family: 'Poppins', sans-serif;
+      }
+
+      @keyframes gradientBG {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
       }
 
       .glass {
-        backdrop-filter: blur(12px);
+        backdrop-filter: blur(18px);
         background-color: rgba(30, 30, 30, 0.6);
         border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 10px 40px rgba(24, 24, 24, 0.801);
+        transition: all 0.4s ease;
       }
 
-      h1 {
-        font-family: 'Segoe UI', sans-serif;
+      .glass:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 20px 60px rgba(2, 1, 105, 0.418);
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(25px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .animate-fadeIn {
+        animation: fadeIn 1.2s ease-out;
+      }
+
+      /* Styling for links */
+      a {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      a:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 4px 12px rgba(0, 255, 255, 0.3);
       }
     </style>
   </head>
-  <body class="text-white flex items-center justify-center min-h-screen">
-    <div class="glass p-8 rounded-2xl shadow-xl text-center max-w-md">
-      <h1 class="text-3xl font-bold text-cyan-400 mb-2">ClearVision V6</h1>
-      <p class="text-gray-300 text-sm">
-        Ein minimalistisches Discord Theme im ClearVision-Stil.
+  <body class="text-white flex items-center justify-center min-h-screen px-4">
+    <div class="glass animate-fadeIn p-10 rounded-3xl text-center max-w-lg w-full">
+      <h1 class="text-4xl font-extrabold text-cyan-400 mb-4 drop-shadow-lg">
+        ClearVision V6
+      </h1>
+      <p class="text-gray-200 text-base mb-6 leading-relaxed">
+        A modern, sleek, and customizable Discord theme inspired by the ClearVision style. Built for users who value clarity and style.
       </p>
-      <div class="mt-6 space-x-4">
+      
+      <div class="flex justify-center space-x-6 mb-6">
         <a
           href="ClearVision_v6.theme.css"
           download
-          class="bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-2 px-4 rounded-xl transition"
-          >Herunterladen</a
+          class="flex items-center bg-cyan-500 hover:bg-cyan-600 text-white font-semibold py-2.5 px-6 rounded-full shadow-md hover:shadow-xl transform hover:-translate-y-1 transition"
         >
+          <i data-feather="download" class="mr-2"></i> Download
+        </a>
+        
         <a
           href="https://cubezockii.github.io/ClearVisionV6/main.css"
           target="_blank"
-          class="border border-cyan-400 text-cyan-300 hover:bg-cyan-700 hover:text-white py-2 px-4 rounded-xl transition"
-          >Raw anzeigen</a
+          class="flex items-center border border-cyan-400 text-cyan-300 hover:bg-cyan-700 hover:text-white py-2.5 px-6 rounded-full transition transform hover:-translate-y-1 shadow-sm hover:shadow-md"
         >
+          <i data-feather="code" class="mr-2"></i> View Raw
+        </a>
       </div>
-    </div>
+
+    <script>
+      feather.replace();
+    </script>
   </body>
 </html>
