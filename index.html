@@ -2,28 +2,76 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="author" content="CubeZockii" />
-    <meta name="description" content="Download ClearVision V6 without the Update Notice." />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ClearVision V6 – Discord Theme</title>
 
-    <!-- Tailwind CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Feather Icons -->
-    <script src="https://unpkg.com/feather-icons"></script>
+    <!-- Custom Tailwind Configuration for Extended Colors -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'dark-purple': '#1D1A25',
+              'light-purple': '#3A334B',
+              'accent-pink': '#FF6B81',
+              'accent-blue': '#6A67E4',
+              'dark-glass': 'rgba(30, 30, 30, 0.6)',
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+          },
+        },
+      };
+    </script>
 
     <style>
       body {
         background: url('https://wallpapercave.com/wp/wp7444392.jpg') no-repeat center center fixed;
         background-size: cover;
-        font-family: 'Poppins', sans-serif;
       }
 
-      @keyframes gradientBG {
+      .glass-card {
+        background-color: rgba(30, 30, 30, 0.4);
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+      }
+
+      .btn {
+        transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+      }
+
+      .btn:hover {
+        transform: translateY(-3px);
+      }
+
+      .animated-text {
+        background: linear-gradient(
+          45deg,
+          #6A67E4,
+          #FF6B81,
+          #6A67E4
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-size: 200% 200%;
+        animation: gradient 5s ease-in-out infinite;
+      }
+
+      @keyframes gradient {
         0% {
           background-position: 0% 50%;
         }
@@ -34,75 +82,57 @@
           background-position: 0% 50%;
         }
       }
-
-      .glass {
-        backdrop-filter: blur(18px);
-        background-color: rgba(30, 30, 30, 0.6);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        box-shadow: 0 10px 40px rgba(24, 24, 24, 0.801);
-        transition: all 0.4s ease;
-      }
-
-      .glass:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 20px 60px rgba(2, 1, 105, 0.418);
-      }
-
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(25px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      .animate-fadeIn {
-        animation: fadeIn 1.2s ease-out;
-      }
-
-      /* Styling for links */
-      a {
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-      }
-
-      a:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 4px 12px rgba(0, 255, 255, 0.3);
-      }
     </style>
   </head>
-  <body class="text-white flex items-center justify-center min-h-screen px-4">
-    <div class="glass animate-fadeIn p-10 rounded-3xl text-center max-w-lg w-full">
-      <h1 class="text-4xl font-extrabold text-cyan-400 mb-4 drop-shadow-lg">
-        ClearVision V6
-      </h1>
-      <p class="text-gray-200 text-base mb-6 leading-relaxed">
-        A modern, sleek, and customizable Discord theme inspired by the ClearVision style. Built for users who value clarity and style.
-      </p>
-      
-      <div class="flex justify-center space-x-6 mb-6">
-        <a
-          href="ClearVision_v6.theme.css"
-          download
-          class="flex items-center bg-cyan-500 hover:bg-cyan-600 text-white font-semibold py-2.5 px-6 rounded-full shadow-md hover:shadow-xl transform hover:-translate-y-1 transition"
-        >
-          <i data-feather="download" class="mr-2"></i> Download
-        </a>
-        
-        <a
-          href="https://cubezockii.github.io/ClearVisionV6/main.css"
-          target="_blank"
-          class="flex items-center border border-cyan-400 text-cyan-300 hover:bg-cyan-700 hover:text-white py-2.5 px-6 rounded-full transition transform hover:-translate-y-1 shadow-sm hover:shadow-md"
-        >
-          <i data-feather="code" class="mr-2"></i> View Raw
-        </a>
-      </div>
+  <body class="text-white min-h-screen flex items-center justify-center p-4 md:p-8">
+    <main
+      class="glass-card w-full max-w-xl p-8 md:p-12 rounded-2xl text-center border-gray-700 shadow-xl"
+    >
+      <!-- Title Section -->
+      <header class="mb-8">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-2 animated-text">
+          ClearVision V6
+        </h1>
+        <p class="text-base text-gray-300 max-w-prose mx-auto leading-relaxed">
+          A sleek and highly customizable Discord theme that brings a modern
+          aesthetic to your favorite platform.
+        </p>
+      </header>
 
-    <script>
-      feather.replace();
-    </script>
+      <!-- Main Content & Buttons -->
+      <section class="space-y-6">
+        <p class="text-gray-400">
+          This theme offers a distraction-free experience with vibrant accents,
+          clean typography, and a refined dark mode. It’s designed to be both
+          functional and beautiful.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+          <!-- Primary Download Button -->
+          <a
+            href="ClearVision_v6.theme.css"
+            download
+            class="btn w-full sm:w-auto px-8 py-3 rounded-full font-semibold bg-accent-blue text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+          >
+            Download Theme
+          </a>
+
+          <!-- Secondary View Code Button -->
+          <a
+            href="https://cubezockii.github.io/ClearVisionV6/main.css"
+            target="_blank"
+            class="btn w-full sm:w-auto px-8 py-3 rounded-full font-semibold border-2 border-accent-pink text-accent-pink transition-all duration-300 hover:bg-accent-pink hover:text-white transform hover:-translate-y-1"
+          >
+            View Raw Code
+          </a>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="mt-8 text-sm text-gray-500">
+        <p>
+          Created and maintained by CubeZockii. All rights reserved.
+        </p>
+      </footer>
+    </main>
   </body>
 </html>
